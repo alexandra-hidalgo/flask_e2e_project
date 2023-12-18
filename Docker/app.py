@@ -17,22 +17,9 @@ sql_query_1 = "SHOW TABLES"
 tables = pd.read_sql(sql_query_1, engine)
 
 @app.route('/')
-def index():
-    return render_template('base.html')
-
-@app.route('/data')
-def data(data=df):
+def data(data=pd.read_sql):
     data = data
     return render_template('data.html', data=data)
-
-@app.route('/api/data')
-def api_data(data=df):
-    ## get year from query string
-    input_year = request.args.get('input_year')
-    ## filter the dataframe
-    data = data[data['Year'] == int(input_year)]
-    data = data.head(10)
-    return data.to_json(orient='records')
 
 
 if __name__ == '__main__':

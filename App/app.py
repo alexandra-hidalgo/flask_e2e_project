@@ -20,9 +20,27 @@ tables = pd.read_sql(sql_query_1, engine)
 def index():
     return render_template('base.html')
 
-@app.route('/')
-def data():
-    return render_template('data.html')
+@app.route('/patients')
+def patients():
+    return render_template('patients.html')
+    
+    @app.route('/providers')
+def providers():
+    return render_template('providers.html')
+
+    @app.route('/appointments')
+def appointments():
+    return render_template('appointments.html')
+
+    @app.route('/test')
+def test():
+    return render_template('test.html')
+
+    @app.route('/prescriptions')
+def prescriptions():
+    return render_template('prescriptions.html')
+    
+
 
 if __name__ == '__main__':
     app.run(

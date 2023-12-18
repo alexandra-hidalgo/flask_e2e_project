@@ -2,6 +2,19 @@
 
 {% block content %}
 
+##
+db_host = '4.227.178.200'
+user = 'alexa'
+password='rada2023'
+database='MedBooking'
+
+## using mysql+pymysql
+engine = create_engine(f"mysql+pymysql://{user}:{password}@{db_host}/{database}")
+
+## get tables from database
+sql_query_1 = "SHOW TABLES"
+tables = pd.read_sql(sql_query_1, engine)
+
 
     <section>
         <h2 class="text-xl mb-2"> Dataset preview using a TABLE in HTML</h2>
