@@ -20,27 +20,30 @@ tables = pd.read_sql(sql_query_1, engine)
 def index():
     return render_template('base.html')
 
-@app.route('/patients')
-def patients():
-    return render_template('patients.html')
-    
-    @app.route('/providers')
-def providers():
-    return render_template('providers.html')
+df = pd.read_sql('SELECT * FROM MedBooking.Patients', engine)
+@app.route('/data')
+def data(data=df):
+    return render_template('data.html', data=data)
 
-    @app.route('/appointments')
-def appointments():
-    return render_template('appointments.html')
+df = pd.read_sql('SELECT * FROM MedBooking.Providers', engine)
+@app.route('/providers')
+def providers(data=df):
+    return render_template('providers.html', data=data)
 
-    @app.route('/test')
-def test():
-    return render_template('test.html')
+df = pd.read_sql('SELECT * FROM MedBooking.Appointments', engine)
+@app.route('/appointments')
+def appointments(data=df):
+    return render_template('appointments.html', data=data)
 
-    @app.route('/prescriptions')
-def prescriptions():
-    return render_template('prescriptions.html')
-    
+df = pd.read_sql('SELECT * FROM MedBooking.Test', engine)
+@app.route('/test')
+def test(data=df):
+    return render_template('test.html', data=data)
 
+df = pd.read_sql('SELECT * FROM MedBooking.Prescriptions', engine)
+@app.route('/prescriptions')
+def prescriptions(data=df):
+    return render_template('prescriptions.html', data=data)
 
 if __name__ == '__main__':
     app.run(

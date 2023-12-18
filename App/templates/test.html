@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+    <section>
+        <h2 class="text-xl mb-2"> Lab Work</h2>
+        <table class="table-auto">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Test Id</th>
+                    <th class="px-4 py-2">Appointment Id</th>
+                    <th class="px-4 py-2">Test Name</th>
+                    <th class="px-4 py-2">Results</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in data.values %}
+                <tr>
+                    <td class="border px-4 py-2">{{ data[0] }}</td>
+                    <td class="border px-4 py-2">{{ data[1] }}</td>
+                    <td class="border px-4 py-2">{{ data[2] }}</td>
+                    <td class="border px-4 py-2">{{ data[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+{% endblock %}
