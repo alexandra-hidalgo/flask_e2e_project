@@ -13,8 +13,8 @@ Google Shell to create the codes.
 
 ## Steps to run it.
 1. Locally: first go to the directory Flask_e2e_project, and then to the folder App. run the command app.py and the app with open.
-2. Deploy to the cloud in Azure:
-3. Docker:
+2. Deploy to the cloud in Azure: Instructiosn bellow
+3. To run it with Ducker locally: Create the image, then run the command run -p 5000:5000 and the name of the image. Make sure to change the port to be able to run the app. 
 
 # Instructions I followed to run it into the cloud with Azure. 
 First, make sure the directory were the app is located is open and ready for all these commands. 
