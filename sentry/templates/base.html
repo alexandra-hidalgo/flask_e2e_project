@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MedBooking</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-300">
+
+    <ima src="young-handsome-physician-medical-robe-with-stethoscope_1303-17818 copy" alt="Image" class="mx-auto mb-4 items-center">
+
+    <header class="bg-pink-400 text-white p-4">
+        <h1 class="text-2xl">Welcome to MedBooking</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li><a href="/data" class="hover:underline">Patients</a></li>
+                <li><a href="/providers" class="hover:underline">Providers</a></li>
+                <li><a href="/appointments" class="hover:underline">Appointments</a></li>
+                <li><a href="/test" class="hover:underline">Test</a></li>
+                <li><a href="/prescriptions" class="hover:underline">Prescriptions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="p-4">
+
+        {% if request.path == '/' %}
+        <p>This App was created to help healthcare providers to have a better insight of their patients and their needs. MedBooking was made for patients and providers to be able to review medical appointments, labs resuts and prescriptions, everything as easy as a click! </p>
+
+    {% endif %}
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="bg-pink-400 text-white p-4 mt-6">
+        <p>© 2023 My Booking App. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
